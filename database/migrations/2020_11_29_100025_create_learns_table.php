@@ -15,6 +15,10 @@ class CreateLearnsTable extends Migration
     {
         Schema::create('learns', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('machineClass');
+            $table->string('body');  
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

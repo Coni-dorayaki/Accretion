@@ -25,5 +25,29 @@ class Admin extends Authenticatable
     {
         $this->notify(new AdminResetPassword($token));
     }
+    
+    public function user()
+    {
+    return $this->hasMany('App\User');
+        
+    }
+    
+    public function checksheet()
+    {
+    return $this->hasMany('App\Checksheet');
+        
+    }
+    
+    public function information()
+    {
+    return $this->hasMany('App\Information');
+        
+    }
+    
+    public function catalog()
+    {
+    return $this->hasMany('App\Catalog');
+        
+    }
 }
 

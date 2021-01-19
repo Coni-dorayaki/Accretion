@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>ACCRETION</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -68,9 +68,9 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/admin') }}">Home</a>
+                        <a href="{{ action('Admin\UserController@index') }}">MYPAGE</a>
                     @else
-                        <a href="{{ url('login/admin') }}">Login</a>
+                        <a href="{{ url('login/admin') }}">HOME</a>
 
                         @if (Route::has('register/admin'))
                             <a href="{{ route('register/admin') }}">Register</a>
@@ -81,18 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    ACCRITION ADMIN
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ action('Admin\CatalogController@index') }}" role="button" class="btn btn-primary titlebtn">Catalog</a>
+                    <a href="{{ action('Admin\InformationController@index') }}" role="button" class="btn btn-primary titlebtn">Chat</a>
+                    <a href="{{ action('Admin\ChecksheetController@index') }}" role="button" class="btn btn-primary titlebtn">Checksheet</a>
+                    <a href="{{ action('Admin\TroubleshootController@index') }}" role="button" class="btn btn-primary titlebtn">Troubleshooting</a>
+                    <a href="{{ action('Admin\LearningController@index') }}" role="button" class="btn btn-primary titlebtn">Learning</a>
+                    <a href="{{ action('Admin\InformationController@index') }}" role="button" class="btn btn-primary titlebtn">Information</a>
                 </div>
             </div>
         </div>

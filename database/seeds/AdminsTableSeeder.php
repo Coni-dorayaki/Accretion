@@ -17,6 +17,7 @@ class AdminsTableSeeder extends Seeder
         DB::table('admins')->insert([
             'id' => '1',
             'name' => '小泉龍也',
+            'belongs' => '東精エンジニアリング',
             'email' => 'zumi@zumi.com',
             'password' => Hash::make('aaaaa000'),
         ]);

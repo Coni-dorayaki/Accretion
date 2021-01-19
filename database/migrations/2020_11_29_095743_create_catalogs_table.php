@@ -15,6 +15,10 @@ class CreateCatalogsTable extends Migration
     {
         Schema::create('catalogs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name'); 
+            $table->string('number');
+            $table->string('price');
+            $table->string('image_path')->nullable();  
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateTroubleshootsTable extends Migration
     {
         Schema::create('troubleshoots', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('machineClass');
+            $table->string('body');  
+            $table->string('image_path')->nullable();  
             $table->timestamps();
         });
     }

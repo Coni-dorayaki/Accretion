@@ -1,4 +1,5 @@
 @extends('layouts.admin', ['authgroup'=>'admin'])
+@section('title', '管理者マイページ')
 
 @section('content')
 <div class="container">

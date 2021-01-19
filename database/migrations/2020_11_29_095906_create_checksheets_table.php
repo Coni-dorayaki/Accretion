@@ -15,6 +15,14 @@ class CreateChecksheetsTable extends Migration
     {
         Schema::create('checksheets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('companyName'); 
+            $table->string('name'); 
+            $table->string('date'); 
+            $table->string('temp');
+            $table->string('humi');
+            $table->string('clean');
+            $table->string('body')->nullable();  
+            $table->string('image_path')->nullable();  
             $table->timestamps();
         });
     }

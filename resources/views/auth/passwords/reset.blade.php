@@ -8,11 +8,7 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    @isset($authgroup)
-                    <form method="POST" action="{{ route($authgroup.'.password.update') }}">
-                    @else
                     <form method="POST" action="{{ route('password.update') }}">
-                    @endisset
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">

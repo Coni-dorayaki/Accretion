@@ -13,11 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @isset($authgroup)
-                    <form method="POST" action="{{ route("$authgroup.password.email") }}">
-                    @else
+
                     <form method="POST" action="{{ route('password.email') }}">
-                    @endisset
                         @csrf
 
                         <div class="form-group row">
