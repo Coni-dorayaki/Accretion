@@ -15,12 +15,12 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
          DB::table('users')->insert([
-            'name' => '山田太郎',
-            'email' => 'yamada@yamada.com',
-            'companyName' => '山田太郎製作所筑波工場',
-            'useMachine' => 'AXCEL 9/10/6 RDS XXT',
+            'name' => '東方仗助',
+            'email' => 'zumi@zumi.com',
+            'companyName' => 'クレイジーダイヤモンド',
+            'useMachine' => 'スタンド使い',
             'telNumber' => '080-0000-0000',
-            'address' => '茨城県つくば市竹園0-0-0',
+            'address' => 'ドラララララ',
             'password' => Hash::make('aaaaa000'),
         ]);
     }

@@ -1,4 +1,4 @@
-@extends('layouts.admin',['authgroup'=>'admin'])
+@extends('layouts.chat')
 @section('title', '問い合わせチャット')
 
 @section('content')
@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<form method="POST" action="{{route('addAdmin')}}">
+<form method="POST" action="{{route('add')}}">
     @csrf
     <div class="comment-container row justify-content-center">
         <div class="input-group comment-area">

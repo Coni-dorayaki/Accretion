@@ -31,23 +31,29 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
+                                <th width="10%">確認者</th>
                                 <th width="10%">日付</th>
                                 <th width="10%">温度</th>
                                 <th width="10%">湿度</th>
                                 <th width="10%">清掃状態</th>
                                 <th width="20%">備考欄</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $checksheet)
                                 <tr>
-                                    <th>{{ $checksheet->id }}</th>
+                                    <th>{{ $checksheet->name }}</th>
                                     <th>{{ $checksheet->date }}</th>
                                     <th>{{ $checksheet->temp }}</th>
                                     <th>{{ $checksheet->humi }}</th>
                                     <th>{{ $checksheet->clean }}</th>
                                     <td>{{ \Str::limit($checksheet->body, 100) }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('User\ChecksheetController@show', $checksheet->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

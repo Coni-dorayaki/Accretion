@@ -34,6 +34,7 @@
                                 <th width="10%">ID</th>
                                 <th width="30%">タイトル</th>
                                 <td width="50%">本文</td>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +43,11 @@
                                     <th>{{ $information->id }}</th>
                                     <th>{{ $information->title }}</th>
                                     <td>{{ \Str::limit($information->body, 100) }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('Admin\InformationController@show', $information->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

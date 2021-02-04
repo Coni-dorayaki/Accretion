@@ -36,18 +36,27 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
     Route::get('/mypage', 'User\UserController@index');
     
     Route::get('/catalog', 'User\CatalogController@index');
-    Route::get('/talk', 'User\ChatController@talk');
+    Route::resource('/catalog/display', 'User\CatalogController', ['only' => ['show']]);
 
     Route::get('/checksheet', 'User\ChecksheetController@index');
     Route::get('/checksheet/check', 'User\ChecksheetController@checkfront');
     Route::post('/checksheet/check', 'User\ChecksheetController@checksend');
+    Route::resource('/checksheet/display', 'User\ChecksheetController', ['only' => ['show']]);
 
     Route::get('/information', 'User\InformationController@index');
-    Route::get('/information/display', 'User\InformationController@show');
+    Route::resource('/information/display', 'User\InformationController', ['only' => ['show']]);
 
     
     Route::get('/learning', 'User\LearningController@index');
+    Route::resource('/learning/display', 'User\LearningController', ['only' => ['show']]);
+    
     Route::get('/troubleshooting', 'User\TroubleshootingController@index');
+    Route::resource('/troubleshooting/display', 'User\TroubleshootingController', ['only' => ['show']]);
+    
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/talk', 'ChatController@index')->name('talk');
+    Route::post('/add', 'ChatController@add')->name('add');
+    Route::get('/result/ajax', 'ChatController@getData');
 
 });
 
@@ -59,24 +68,28 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/information', 'Admin\InformationController@index');
     Route::get('/information/create', 'Admin\InformationController@add');
     Route::post('/information/create', 'Admin\InformationController@create');
+    Route::resource('/information/display', 'Admin\InformationController', ['only' => ['show']]);
     
     Route::get('/catalog', 'Admin\CatalogController@index');
     Route::get('/catalog/create', 'Admin\CatalogController@add');
     Route::post('/catalog/create', 'Admin\CatalogController@create');
+    Route::resource('/catalog/display', 'Admin\CatalogController', ['only' => ['show']]);
     
     Route::get('/learning', 'Admin\LearningController@index');
     Route::get('/learning/create', 'Admin\LearningController@add');
     Route::post('/learning/create', 'Admin\LearningController@create');
+    Route::resource('/learning/display', 'Admin\LearningController', ['only' => ['show']]);
     
     Route::get('/troubleshooting', 'Admin\TroubleshootController@index');
     Route::get('/troubleshooting/create', 'Admin\TroubleshootController@add');
     Route::post('/troubleshooting/create', 'Admin\TroubleshootController@create');
+    Route::resource('/troubleshooting/display', 'Admin\TroubleshootController', ['only' => ['show']]);
+    
     
     Route::get('/checksheet', 'Admin\ChecksheetController@index');
+    Route::resource('/information/display', 'Admin\InformationController', ['only' => ['show']]);
+    
+    Route::get('/talkAdmin', 'ChatController@indexAdmin')->name('talkAdmin');
+    Route::post('/addAdmin', 'ChatController@addAdmin')->name('addAdmin');
+    Route::get('/result/ajax', 'ChatController@getData');
 });
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

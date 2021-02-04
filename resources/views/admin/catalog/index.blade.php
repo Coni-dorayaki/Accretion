@@ -32,9 +32,10 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="30%">品名</th>
-                                <th width="30%">部品番号</th>
+                                <th width="20%">品名</th>
+                                <th width="20%">部品番号</th>
                                 <td width="30%">価格</td>
+                                <td width="30%">操作</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +45,11 @@
                                     <th>{{ $catalog->name }}</th>
                                     <th>{{ $catalog->number }}</th>
                                     <td>{{ $catalog->price }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('Admin\CatalogController@show', $catalog->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

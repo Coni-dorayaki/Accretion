@@ -20,12 +20,12 @@ class CatalogController extends Controller
   }
 
   
-  public function add()
+    public function add()
   {
       return view('admin.catalog.create');
   }
   
-  public function create(Request $request)
+     public function create(Request $request)
   {
       $this->validate($request, Catalog::$rules);
       
@@ -47,4 +47,13 @@ class CatalogController extends Controller
       $catalog->save();
       return redirect('admin/catalog');
   }  
+  
+      public function show(Request $request,$id)
+    {
+        $catalog = Catalog::findOrFail($id);
+        return view('admin.catalog.display',[
+            'catalog'=>$catalog
+        ]);
+    }
+
 }

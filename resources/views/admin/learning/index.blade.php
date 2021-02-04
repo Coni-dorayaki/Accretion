@@ -44,6 +44,11 @@
                                     <th>{{ $learning->title }}</th>
                                     <th>{{ $learning->machineClass }}</th>
                                     <td>{{ \Str::limit($learning->body, 100) }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('Admin\LearningController@show', $learning->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

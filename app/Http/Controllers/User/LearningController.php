@@ -18,4 +18,14 @@ class LearningController extends Controller
       }
       return view('user.learning.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
+  
+  
+  public function show(Request $request, $id)
+     {
+        $learning = Learning::findOrFail($id);
+ 
+      return view('user.learning.display', [
+            'learning' => $learning,
+       ]);
+     }
 }

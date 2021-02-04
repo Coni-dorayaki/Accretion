@@ -41,6 +41,11 @@
                                     <th>{{ $troubleshoot->title }}</th>
                                     <th>{{ $troubleshoot->machineClass }}</th>
                                     <td>{{ \Str::limit($troubleshoot->body, 100) }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('User\TroubleshootingController@show', $troubleshoot->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

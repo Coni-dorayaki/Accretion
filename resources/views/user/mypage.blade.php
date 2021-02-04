@@ -12,9 +12,9 @@
                                 <td width="10%">会社名</td>
                                 <th width="10%">名前</th>
                                 <th width="20%">メールアドレス</th>
-                                <th width="20%">住所</th>
+                                <th width="20%">機種</th>
                                 <td width="10%">電話番号</td>
-                                <td width="10%">使用機械</td>
+                                <td width="10%">住所</td>
                             </tr>
                         </thead>
                         <tbody>

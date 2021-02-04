@@ -18,4 +18,13 @@ class TroubleshootingController extends Controller
       }
       return view('user.troubleshooting.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
+  
+      public function show(Request $request, $id)
+     {
+        $troubleshoot = Troubleshoot::findOrFail($id);
+ 
+      return view('user.troubleshooting.display', [
+            'troubleshoot' => $troubleshoot,
+       ]);
+     }
 }

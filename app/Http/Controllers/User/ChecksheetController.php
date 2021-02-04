@@ -49,4 +49,14 @@ class ChecksheetController extends Controller
       $checksheet->save();
       return redirect('user/checksheet');
   }  
+  
+  
+  public function show(Request $request, $id)
+     {
+        $checksheet = Checksheet::findOrFail($id);
+ 
+      return view('user.checksheet.display', [
+            'checksheet' => $checksheet,
+       ]);
+     }
 }

@@ -41,6 +41,11 @@
                                     <th>{{ $catalog->name }}</th>
                                     <th>{{ $catalog->number }}</th>
                                     <td>{{ $catalog->price }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('User\CatalogController@show', $catalog->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

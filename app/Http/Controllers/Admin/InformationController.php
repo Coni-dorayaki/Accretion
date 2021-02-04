@@ -47,4 +47,12 @@ class InformationController extends Controller
       $information->save();
       return redirect('admin/information');
   }  
+  
+   public function show(Request $request,$id)
+    {
+        $information = Information::findOrFail($id);
+        return view('admin.information.display',[
+            'information'=>$information
+        ]);
+    }
 }

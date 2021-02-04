@@ -11,12 +11,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/view.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -35,9 +37,7 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-                    
-                    
-                                        <!-- Right Side Of Navbar -->
+                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @if(!Auth::check() && (!isset($authgroup) || !Auth::guard($authgroup)->check()))
@@ -93,5 +93,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('js')
 </body>
 </html>

@@ -18,4 +18,12 @@ class CatalogController extends Controller
       }
       return view('user.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
+  
+   public function show(Request $request,$id)
+    {
+        $catalog = Catalog::findOrFail($id);
+        return view('user.catalog.display',[
+            'catalog'=>$catalog
+        ]);
+    }
 }

@@ -47,4 +47,13 @@ class TroubleshootController extends Controller
       $troubleshoot->save();
       return redirect('admin/troubleshooting');
   }  
+  
+  public function show(Request $request, $id)
+     {
+        $troubleshoot = Troubleshoot::findOrFail($id);
+ 
+      return view('admin.troubleshooting.display', [
+            'troubleshoot' => $troubleshoot,
+       ]);
+     }
 }

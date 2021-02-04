@@ -47,4 +47,13 @@ class LearningController extends Controller
       $learning->save();
       return redirect('admin/learning');
   }  
+  
+  public function show(Request $request, $id)
+     {
+        $learning = Learning::findOrFail($id);
+ 
+      return view('admin.learning.display', [
+            'learning' => $learning,
+       ]);
+     }
 }

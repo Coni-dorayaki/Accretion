@@ -31,6 +31,7 @@
                                 <th width="5%">ID</th>
                                 <th width="10%">タイトル</th>
                                 <td width="40%">本文</td>
+                                <th width="5%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +40,11 @@
                                     <th>{{ $information->id }}</th>
                                     <th>{{ $information->title }}</th>
                                     <td>{{ \Str::limit($information->body, 100) }}</td>
+                                    <td>
+                                        <div>
+                                        <a href="{{ action('User\InformationController@show', $information->id) }}" role="button" class="btn btn-primary">詳細</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

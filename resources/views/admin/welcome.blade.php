@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="{{ action('Admin\CatalogController@index') }}" role="button" class="btn btn-primary titlebtn">Catalog</a>
-                    <a href="{{ action('Admin\InformationController@index') }}" role="button" class="btn btn-primary titlebtn">Chat</a>
+                    <a href="{{ action('ChatController@indexAdmin') }}" role="button" class="btn btn-primary titlebtn">Chat</a>
                     <a href="{{ action('Admin\ChecksheetController@index') }}" role="button" class="btn btn-primary titlebtn">Checksheet</a>
                     <a href="{{ action('Admin\TroubleshootController@index') }}" role="button" class="btn btn-primary titlebtn">Troubleshooting</a>
                     <a href="{{ action('Admin\LearningController@index') }}" role="button" class="btn btn-primary titlebtn">Learning</a>
