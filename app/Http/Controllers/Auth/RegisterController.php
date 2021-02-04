@@ -90,7 +90,7 @@ class RegisterController extends Controller
 
     public function showAdminRegisterForm()
     {
-        return view('auth.register', ['authgroup' => 'admin']);
+        return view('auth.registerAdmin', ['authgroup' => 'admin']);
     }
 
     protected function createAdmin(Request $request)
@@ -99,6 +99,8 @@ class RegisterController extends Controller
         $admin = Admin::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'companyName' => $request['companyName'],
+            'belongs' => $request['belongs'],
             'password' => Hash::make($request['password']),
         ]);
         return redirect()->intended('login/admin');
