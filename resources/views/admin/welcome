@@ -45,13 +45,13 @@
             }
 
             .title {
-                font-size: 70px;
+                font-size: 84px;
             }
 
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 22px;
+                font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -68,12 +68,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ action('Admin\UserController@index') }}">MYPAGE</a>
+                        <a href="{{ action('User\UserController@index') }}">MYPAGE</a>
                     @else
-                        <a href="{{ url('login/admin') }}">HOME</a>
+                        <a href="{{ url('login') }}">HOME</a>
 
-                        @if (Route::has('register/admin'))
-                            <a href="{{ route('register/admin') }}">Register</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -81,11 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    ACCRITION ADMIN
+                    ACCRITION
                 </div>
 
                 <div class="links">
-                  <a href="{{ action('ChatController@indexAdmin') }}" role="button" class="btn btn-primary titlebtn">Chat</a>
+                    <a href="{{ action('User\CatalogController@index') }}" role="button" class="btn btn-primary titlebtn">Catalog</a>
+                    <a href="{{ action('ChatController@index') }}" role="button" class="btn btn-primary titlebtn">Chat</a>
+                    <a href="{{ action('User\ChecksheetController@index') }}" role="button" class="btn btn-primary titlebtn">Checksheet</a>
+                    <a href="{{ action('User\TroubleshootingController@index') }}" role="button" class="btn btn-primary titlebtn">Troubleshooting</a>
+                    <a href="{{ action('User\LearningController@index') }}" role="button" class="btn btn-primary titlebtn">Learning</a>
+                    <a href="{{ action('User\InformationController@index') }}" role="button" class="btn btn-primary titlebtn">Information</a>
                 </div>
             </div>
         </div>

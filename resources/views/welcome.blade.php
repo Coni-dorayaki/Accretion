@@ -45,13 +45,13 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 70px;
             }
 
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 22px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -85,12 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ action('User\CatalogController@index') }}" role="button" class="btn btn-primary titlebtn">Catalog</a>
                     <a href="{{ action('ChatController@index') }}" role="button" class="btn btn-primary titlebtn">Chat</a>
-                    <a href="{{ action('User\ChecksheetController@index') }}" role="button" class="btn btn-primary titlebtn">Checksheet</a>
-                    <a href="{{ action('User\TroubleshootingController@index') }}" role="button" class="btn btn-primary titlebtn">Troubleshooting</a>
-                    <a href="{{ action('User\LearningController@index') }}" role="button" class="btn btn-primary titlebtn">Learning</a>
-                    <a href="{{ action('User\InformationController@index') }}" role="button" class="btn btn-primary titlebtn">Information</a>
                 </div>
             </div>
         </div>
