@@ -1926,7 +1926,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('Component mounted.');
+    var _this = this;
+
+    this.getMessages();
+    Echo.channel('chat').listen('MessageCreated', function (e) {
+      _this.getMessages(); // 全メッセージを再読込
+
+    });
   }
 });
 
@@ -55929,7 +55935,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: "ae77f512936ff8e86266",
   cluster: "ap3",
-  encrypted: true
+  encrypted: false
 });
 
 /***/ }),
