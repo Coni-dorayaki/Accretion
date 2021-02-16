@@ -57,4 +57,13 @@ class ChatController extends Controller
          $json = ["comments" => $comments];
           return response()->json($json);
     }
+    
+    public function create(Request $request) {
+
+    $comment = \App\Comment::create([
+        'comment' => $request->comments
+    ]);
+    event(new MessageCreated($comment));
+
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Comment;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -13,15 +14,17 @@ use Illuminate\Queue\SerializesModels;
 class MessageCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+    
+    public $comment;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Comment $comment)
     {
-        //
+        $this->comment = $comment;
     }
 
     /**
@@ -31,6 +34,6 @@ class MessageCreated
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+         return new Channel('chat');
     }
 }
